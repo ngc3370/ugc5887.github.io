@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Blogging Posts Page - Responsive Grid System</title>
+      <link rel="stylesheet" href="master.css">
+      <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+		<div class="container">
+			<div class="titles">
+				<div class="title title-1"><h1>Acami</h1></div>
+				<div class="title title-3"><h1> </h1></div>
+			</div>
+		</div>
+<!--      <header>-->
+<!--            <h3>Responsive Grid Layout</h3>-->
+<!--      </header>-->
+		<div class="info">
+				<h4>Acami</h4></div>
+		</div>
+        <p>　　　　　</p>
+        <p>　　　　　</p>
+
+      <div class="wall">
+            <div class="wall-item">
+                  <img src="03.jpg" alt="">
+                  <h4>Character Design</h4>
+<!--                  <p>Lorem ipsum dolor sit amet</p>-->
+            </div>
+
+            <div class="wall-item">
+                  <img src="03.jpg" alt="">
+                  <h4>Illustration</h4>
+<!--                  <p>Lorem ipsum dolor sit amet</p>-->
+            </div>
+
+            <div class="wall-item">
+                  <img src="03.jpg" alt="">
+                  <h4>Personal Project</h4>
+<!--                  <p>Lorem ipsum dolor sit amet</p>-->
+            </div>
+
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="jaliswall.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+      <script type="text/javascript">
+
+            $('.wall').jaliswall({
+                  item : '.wall-item',
+                  columnClass : '.wall-column'
+            });
+
+			anime.timeline().add({
+				targets: ".header .letter",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 2000,
+			});
+			anime.timeline().add({
+				targets: ".wall-column",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 2500,
+			});
+			anime.timeline().add({
+				targets: ".info",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 2000,
+			});
+
+			TweenMax.staggerFrom(
+				".titles > div",
+				0.8,
+				{
+					x: "-60",
+					ease: Power3.easeInOut,
+					opacity: "0",
+				},
+				2
+			);
+
+			TweenMax.staggerTo(
+				".titles > div",
+				0.8,
+				{
+					x: "60",
+					ease: Power3.easeInOut,
+					delay: 1.2,
+					opacity: "0",
+				},
+				2
+			);
+
+
+			var textWrapper = document.querySelector(".header");
+			textWrapper.innerHTML = textWrapper.textContent.replace(
+				/\S/g,
+				"<span class='letter'>$&</span>"
+			);
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RANDOM STAGGER</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		<!--		NOTE: text trail effect-->
+<!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ==" crossorigin="anonymous"></script>-->
+	</head>
+	<body>
+	<!--		NOTE: text trail effect-->
+<!--	   	<div class="cursor">-->
+<!--			<div class="text">a</div>-->
+<!--			<div class="text">c</div>-->
+<!--			<div class="text">a</div>-->
+<!--			<div class="text">m</div>-->
+<!--			<div class="text"><span>i</span></div>-->
+<!--   		</div>-->
+		<div class="container">
+			<h1 class="header">
+<!--				sample <br />&nbsp;&nbsp; text <br />!-->
+			</h1>
+
+			<div class="titles">
+				<div class="title title-1"><h1>Acami</h1></div>
+				<div class="title title-3"><h1> </h1></div>
+			</div>
+
+		</div>
+			<div class="info">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores harum veritatis
+                nemo magni odio reprehenderit atque, esse animi porro suscipit vero nobis modi quis.
+                Exercitationem quasi beatae, assumenda officia illum sunt. Cum voluptas maiores
+                vitae eius hic inventore deleniti placeat perferendis quam ut nostrum maxime optio
+                voluptatibus ab laboriosam, quia consectetur atque minus? Adipisci amet aut sint
+                voluptates delectus aperiam? Veniam ab illum enim in libero nihil culpa explicabo
+                perspiciatis veritatis non repellendus architecto excepturi nostrum porro voluptatem
+                aperiam animi asperiores, a voluptatibus temporibus minima voluptas ipsa! Recusandae
+                nostrum, aut, voluptates est error iusto, eaque excepturi soluta quas maiores amet.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum perferendis error
+                debitis deleniti obcaecati nisi dignissimos doloribus omnis incidunt neque.
+                Aspernatur, odit. Natus, porro adipisci corporis perspiciatis aspernatur illum
+                repellendus vitae explicabo, ex reiciendis molestiae id dicta quos repudiandae at.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores harum veritatis
+                nemo magni odio reprehenderit atque, esse animi porro suscipit vero nobis modi quis.
+                Exercitationem quasi beatae, assumenda officia illum sunt. Cum voluptas maiores
+                vitae eius hic inventore deleniti placeat perferendis quam ut nostrum maxime optio
+                voluptatibus ab laboriosam, quia consectetur atque minus? Adipisci amet aut sint
+                voluptates delectus aperiam? Veniam ab illum enim in libero nihil culpa explicabo
+                perspiciatis veritatis non repellendus architecto excepturi nostrum porro voluptatem
+                aperiam animi asperiores, a voluptatibus temporibus minima voluptas ipsa! Recusandae
+                nostrum, aut, voluptates est error iusto, eaque excepturi soluta quas maiores amet.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum perferendis error
+                debitis deleniti obcaecati nisi dignissimos doloribus omnis incidunt neque.
+                Aspernatur, odit. Natus, porro adipisci corporis perspiciatis aspernatur illum
+                repellendus vitae explicabo, ex reiciendis molestiae id dicta quos repudiandae at.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores harum veritatis
+                nemo magni odio reprehenderit atque, esse animi porro suscipit vero nobis modi quis.
+                Exercitationem quasi beatae, assumenda officia illum sunt. Cum voluptas maiores
+                vitae eius hic inventore deleniti placeat perferendis quam ut nostrum maxime optio
+                voluptatibus ab laboriosam, quia consectetur atque minus? Adipisci amet aut sint
+                voluptates delectus aperiam? Veniam ab illum enim in libero nihil culpa explicabo
+                perspiciatis veritatis non repellendus architecto excepturi nostrum porro voluptatem
+                aperiam animi asperiores, a voluptatibus temporibus minima voluptas ipsa! Recusandae
+                nostrum, aut, voluptates est error iusto, eaque excepturi soluta quas maiores amet.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum perferendis error
+                debitis deleniti obcaecati nisi dignissimos doloribus omnis incidunt neque.
+                Aspernatur, odit. Natus, porro adipisci corporis perspiciatis aspernatur illum
+                repellendus vitae explicabo, ex reiciendis molestiae id dicta quos repudiandae at.
+            </p>
+				</div>
+		<script>
+<!--		NOTE: text trail effect-->
+<!--			document.addEventListener("mousemove", e => {-->
+<!--				gsap.to(".text", {-->
+<!--					x: e.clientX,-->
+<!--					y: e.clientY,-->
+<!--					stagger: -0.02-->
+<!--				});-->
+<!--			});-->
+			TweenMax.staggerFrom(
+				".titles > div",
+				0.8,
+				{
+					x: "-60",
+					ease: Power3.easeInOut,
+					opacity: "0",
+				},
+				2
+			);
+
+			TweenMax.staggerTo(
+				".titles > div",
+				0.8,
+				{
+					x: "60",
+					ease: Power3.easeInOut,
+					delay: 1.2,
+					opacity: "0",
+				},
+				2
+			);
+
+
+			var textWrapper = document.querySelector(".header");
+			textWrapper.innerHTML = textWrapper.textContent.replace(
+				/\S/g,
+				"<span class='letter'>$&</span>"
+			);
+
+			anime.timeline().add({
+				targets: ".header .letter",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 2000,
+			});
+			anime.timeline().add({
+				targets: ".info",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 2000,
+				delay: (el, i) => 2000,
+			});
+		</script>
+	</body>
+</html>

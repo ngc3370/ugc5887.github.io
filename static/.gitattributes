@@ -1,0 +1,2 @@
+download/XingzhuhaiSetup1.0.0.exe filter=lfs diff=lfs merge=lfs -text
+download/com.ngc3370.xingzhuhai-6-universal-release.apk filter=lfs diff=lfs merge=lfs -text

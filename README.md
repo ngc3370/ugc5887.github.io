@@ -1,2 +1,2 @@
 # ugc5887.github.io
-personal site
+personal site mirror
